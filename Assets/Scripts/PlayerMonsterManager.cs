@@ -80,6 +80,11 @@ public class PlayerMonsterManager : MonoBehaviour
     public void heal(int healValue)
     {
         PlayerMonsterHP += healValue;
+        //HP上限を越えて回復を防ぐ
+        if(PlayerMonsterHP >= PlayerMonsterMaxHP)
+        {
+            PlayerMonsterHP = PlayerMonsterMaxHP;
+        }
         PlayerMonsterHPText.text = string.Format("HP:{0}/{1}",PlayerMonsterHP,PlayerMonsterMaxHP);
     }
 

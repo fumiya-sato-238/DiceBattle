@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     int turnCount;
     [SerializeField] GameObject diceActionPanel;
     [SerializeField] GameObject rollButton;
+    [SerializeField] GameObject skillButton;
     [SerializeField] Button diceActionButton_1;
     [SerializeField] Button diceActionButton_2;
     [SerializeField] Button diceActionButton_3;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         diceActionPanel.SetActive(true);
         rollButton.SetActive(false);
+        skillButton.SetActive(false);
 
         int diceIndex = getRandom(7);
         viewDiceActionButton(diceIndex);
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
         TurnCountText.text = string.Format("Turn:{0}",++turnCount);
         diceActionPanel.SetActive(false);
         rollButton.SetActive(true);
+        skillButton.SetActive(true);
     }
 
     //乱数生成（1〜max-1）
