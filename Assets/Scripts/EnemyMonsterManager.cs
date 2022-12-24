@@ -9,6 +9,9 @@ public class EnemyMonsterManager : MonoBehaviour
     [SerializeField] int EnemyMonsterMaxHP;
     int EnemyMonsterHP;
 
+    [SerializeField] GameObject resultPanel;
+    [SerializeField] Text resultText;
+
     [SerializeField] PlayerMonsterManager playerMonsterManager;
 
     public void init(){
@@ -26,6 +29,21 @@ public class EnemyMonsterManager : MonoBehaviour
     public void damage(int damageValue)
     {
         EnemyMonsterHP -= damageValue;
+        if(EnemyMonsterHP <= 0)
+        {
+            EnemyMonsterHP = 0;
+        }
         EnemyMonsterHPText.text = string.Format("HP:{0}/{1}",EnemyMonsterHP,EnemyMonsterMaxHP);
+        checkAlive();
+    }
+
+    void checkAlive()
+    {
+        if(EnemyMonsterHP <= 0)
+        {
+            resultPanel.SetActive(true);
+            resultText.text = "YOU WIN!!!";
+            Debug.Log("Player Win!");
+        }
     }
 }
