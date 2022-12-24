@@ -7,9 +7,12 @@ public class EnemyMonsterManager : MonoBehaviour
 {
     [SerializeField] Text EnemyMonsterHPText;
     [SerializeField] int EnemyMonsterMaxHP;
+    int EnemyMonsterHP;
+
+    [SerializeField] PlayerMonsterManager playerMonsterManager;
 
     public void init(){
-        int EnemyMonsterHP = EnemyMonsterMaxHP;
+        EnemyMonsterHP = EnemyMonsterMaxHP;
         EnemyMonsterHPText.text = string.Format("HP:{0}/{1}",EnemyMonsterHP,EnemyMonsterMaxHP);
     }
 
@@ -17,5 +20,12 @@ public class EnemyMonsterManager : MonoBehaviour
     public void attack()
     {
         Debug.Log("敵の攻撃！");
+        playerMonsterManager.damage(3);
+    }
+
+    public void damage(int damageValue)
+    {
+        EnemyMonsterHP -= damageValue;
+        EnemyMonsterHPText.text = string.Format("HP:{0}/{1}",EnemyMonsterHP,EnemyMonsterMaxHP);
     }
 }
