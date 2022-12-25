@@ -3,7 +3,21 @@ guid: fe966a6a520ee4c8c8e928f22bf89b3a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerMonsterManager: {instanceID: 0}
+  - enemyMonsterManager: {instanceID: 0}
+  - TurnCountText: {instanceID: 0}
+  - diceActionPanel: {instanceID: 0}
+  - rollButton: {instanceID: 0}
+  - skillButton: {instanceID: 0}
+  - skillPanel: {instanceID: 0}
+  - diceActionButton_1: {instanceID: 0}
+  - diceActionButton_2: {instanceID: 0}
+  - diceActionButton_3: {instanceID: 0}
+  - diceActionButton_4: {instanceID: 0}
+  - diceActionButton_5: {instanceID: 0}
+  - diceActionButton_6: {instanceID: 0}
+  - dice_1: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

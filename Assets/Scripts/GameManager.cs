@@ -14,12 +14,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject rollButton;
     [SerializeField] GameObject skillButton;
     [SerializeField] GameObject skillPanel;
+
     [SerializeField] Button diceActionButton_1;
     [SerializeField] Button diceActionButton_2;
     [SerializeField] Button diceActionButton_3;
     [SerializeField] Button diceActionButton_4;
     [SerializeField] Button diceActionButton_5;
     [SerializeField] Button diceActionButton_6;
+
+    [SerializeField] Transform parent;
+    [SerializeField] GameObject[] diceResultPanel;
+    GameObject diceResult;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +106,7 @@ public class GameManager : MonoBehaviour
         diceActionPanel.SetActive(false);
         rollButton.SetActive(true);
         skillButton.SetActive(true);
+        Destroy(diceResult);
     }
 
     //乱数生成（1〜max-1）
@@ -121,6 +127,9 @@ public class GameManager : MonoBehaviour
         diceActionButton_6.interactable = true;
         if(diceIndex == 1)
         {
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
+
             diceActionButton_2.interactable = false;
             diceActionButton_3.interactable = false;
             diceActionButton_4.interactable = false;
@@ -129,6 +138,9 @@ public class GameManager : MonoBehaviour
         }
         else if(diceIndex == 2)
         {
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
+
             diceActionButton_3.interactable = false;
             diceActionButton_4.interactable = false;
             diceActionButton_5.interactable = false;
@@ -136,22 +148,32 @@ public class GameManager : MonoBehaviour
         }
         else if(diceIndex == 3)
         {
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
+
             diceActionButton_4.interactable = false;
             diceActionButton_5.interactable = false;
             diceActionButton_6.interactable = false;
         }
         else if(diceIndex == 4)
         {
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
+
             diceActionButton_5.interactable = false;
             diceActionButton_6.interactable = false;
         }
         else if(diceIndex == 5)
         {
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
+
             diceActionButton_6.interactable = false;
         }
         else
         {
-
+            diceResult = Instantiate(diceResultPanel[diceIndex-1]);
+            diceResult.transform.SetParent(parent,false);
         }
     }
 

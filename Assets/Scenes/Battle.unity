@@ -3515,7 +3515,6 @@ RectTransform:
   - {fileID: 710162159}
   - {fileID: 1082199501}
   - {fileID: 552193222}
-  - {fileID: 1828811917}
   - {fileID: 2014482231}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4112,18 +4111,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828811916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 764513015}
-  m_Father: {fileID: 1542963932}
+  m_Father: {fileID: 2014482231}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 404.9}
   m_SizeDelta: {x: 770.6, y: 1352.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828811918
@@ -4403,6 +4402,14 @@ MonoBehaviour:
   diceActionButton_4: {fileID: 1361647474}
   diceActionButton_5: {fileID: 1413121614}
   diceActionButton_6: {fileID: 2004523175}
+  parent: {fileID: 1542963932}
+  diceResultPanel:
+  - {fileID: 8647836140564885006, guid: c67fb2204989a43d2bce1860b1f32b8c, type: 3}
+  - {fileID: 8647836140564885006, guid: abb9e15195e1e4ff0a2a3135c275cdac, type: 3}
+  - {fileID: 8647836140564885006, guid: 8d63d7a3edf3041a1a4ceab2f9eafff8, type: 3}
+  - {fileID: 8647836140564885006, guid: 8022706b87e8d49c5b89fa0dcc7065c9, type: 3}
+  - {fileID: 8647836140564885006, guid: 12f8017eda6cf4861bac28108fefd1d8, type: 3}
+  - {fileID: 8647836140564885006, guid: 0533742836a5242aebb29d300c16acda, type: 3}
 --- !u!4 &1949881297
 Transform:
   m_ObjectHideFlags: 0
@@ -4666,8 +4673,9 @@ RectTransform:
   - {fileID: 497772052}
   - {fileID: 228909791}
   - {fileID: 468306951}
+  - {fileID: 1828811917}
   m_Father: {fileID: 1542963932}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
