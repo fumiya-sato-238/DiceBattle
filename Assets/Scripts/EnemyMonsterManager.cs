@@ -7,6 +7,7 @@ public class EnemyMonsterManager : MonoBehaviour
 {
     [SerializeField] Text EnemyMonsterHPText;
     [SerializeField] int EnemyMonsterMaxHP;
+    [SerializeField] Slider hpSlider;
     int EnemyMonsterHP;
 
     [SerializeField] GameObject resultPanel;
@@ -15,6 +16,7 @@ public class EnemyMonsterManager : MonoBehaviour
     [SerializeField] PlayerMonsterManager playerMonsterManager;
 
     public void init(){
+        hpSlider.value = 1;
         EnemyMonsterHP = EnemyMonsterMaxHP;
         EnemyMonsterHPText.text = string.Format("HP:{0}/{1}",EnemyMonsterHP,EnemyMonsterMaxHP);
     }
@@ -34,6 +36,7 @@ public class EnemyMonsterManager : MonoBehaviour
             EnemyMonsterHP = 0;
         }
         EnemyMonsterHPText.text = string.Format("HP:{0}/{1}",EnemyMonsterHP,EnemyMonsterMaxHP);
+        hpSlider.value = (float) EnemyMonsterHP / (float) EnemyMonsterMaxHP;
         checkAlive();
     }
 

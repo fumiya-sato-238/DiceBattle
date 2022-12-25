@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject diceActionPanel;
     [SerializeField] GameObject rollButton;
     [SerializeField] GameObject skillButton;
+    [SerializeField] GameObject skillPanel;
     [SerializeField] Button diceActionButton_1;
     [SerializeField] Button diceActionButton_2;
     [SerializeField] Button diceActionButton_3;
@@ -24,12 +25,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         diceActionPanel.SetActive(false);
+        skillPanel.SetActive(false);
         turnCount = 1;
         TurnCountText.text = string.Format("Turn:{0}",turnCount);
         playerMonsterManager.init();
         enemyMonsterManager.init();
     }
 
+    //-------------ボタン関連--------------------
     public void OnRollButton()
     {
         diceActionPanel.SetActive(true);
@@ -79,6 +82,17 @@ public class GameManager : MonoBehaviour
         enemyMonsterManager.attack();
         afterDiceAction();
     }
+
+    public void OnSkillButton()
+    {
+        skillPanel.SetActive(true);
+    }
+    public void OnSkillExitButton()
+    {
+        skillPanel.SetActive(false);
+    }
+
+    //-------------ここまでボタン関連--------------------
 
     //DiceAction後の処理
     void afterDiceAction()

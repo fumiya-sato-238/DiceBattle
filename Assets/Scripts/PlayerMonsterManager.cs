@@ -7,6 +7,7 @@ public class PlayerMonsterManager : MonoBehaviour
 {
     [SerializeField] Text PlayerMonsterHPText;
     [SerializeField] int PlayerMonsterMaxHP;
+    [SerializeField] Slider hpSlider;
     [SerializeField] Text PlayerMonsterDPText;
     int PlayerMonsterHP;
     int PlayerMonsterDP;
@@ -20,6 +21,7 @@ public class PlayerMonsterManager : MonoBehaviour
     [SerializeField] EnemyMonsterManager enemyMonsterManager;
 
     public void init(){
+        hpSlider.value = 1;
         PlayerMonsterHP = PlayerMonsterMaxHP;
         PlayerMonsterHPText.text = string.Format("HP:{0}/{1}",PlayerMonsterHP,PlayerMonsterMaxHP);
         PlayerMonsterDP = 0;
@@ -75,6 +77,7 @@ public class PlayerMonsterManager : MonoBehaviour
             PlayerMonsterHP = 0;
         }
         PlayerMonsterHPText.text = string.Format("HP:{0}/{1}",PlayerMonsterHP,PlayerMonsterMaxHP);
+        hpSlider.value = (float) PlayerMonsterHP / (float) PlayerMonsterMaxHP;
         checkAlive();
     }
     public void heal(int healValue)
@@ -86,6 +89,7 @@ public class PlayerMonsterManager : MonoBehaviour
             PlayerMonsterHP = PlayerMonsterMaxHP;
         }
         PlayerMonsterHPText.text = string.Format("HP:{0}/{1}",PlayerMonsterHP,PlayerMonsterMaxHP);
+        hpSlider.value = (float) PlayerMonsterHP / (float) PlayerMonsterMaxHP;
     }
 
     public void addTurnDP(int diceIndex)
